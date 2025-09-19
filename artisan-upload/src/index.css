@@ -1,0 +1,311 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Epunda Slab', sans-serif;
+}
+
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/crumbled-paper.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    z-index: -1;
+}
+.main {
+    background-color: rgba(210, 180, 140, 0.65); 
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgb(0, 0, 0, 0.5);
+    margin-left: 150px;
+    margin-right: 150px;
+    position: relative;
+    overflow: hidden;
+}
+.main-content {
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgb(0, 0, 0, 0.5);
+    margin-left: 150px;
+    margin-right: 150px;
+    position: relative;
+    overflow: hidden;
+}
+.main-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(/illustration.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    z-index: -1;
+}
+h1,h2,h3 {
+    font-family: 'Playfair Display', sans-serif;
+    color: #3e2723;
+}
+
+h4,h5,h6 {
+    font-family: 'Epunda Slab', sans-serif;
+    color: #6b8e23;
+}
+
+p {
+    font-family: 'Merriweather',serif;
+    color: #3e2723;
+}
+button {
+    padding: 12px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+button:hover {
+    transform: scale(1.05);
+}
+.step-box {
+    position: relative;
+    border: 2px dashed transparent;
+    padding: 20px;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.step-box:hover{
+    border-color: #3e2723;
+    background-color: rgba(214, 194, 159, 0.1);
+}
+.step-box:hover .step-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+.step-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #3e2723;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+.about-section {
+  padding: 2px;  
+}
+.about-container {
+  background-color: rgba(204, 181, 150, 0.75);
+  padding: 2rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  position: relative; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About Title */
+.about-title {
+  color: #3e2723; /* Dark brown text color */
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem 1rem 0 0;
+  position: absolute; 
+  top: -20px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 200px; 
+  z-index: 10; 
+}
+
+.product-image {
+  position: absolute;
+  bottom: -80px;
+  right: -30px;
+  width: 150px; 
+  height: 150px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.2); 
+}
+
+/* Global Styles for Text Shadows */
+.text-shadow {
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds shadow to text */
+}
+
+/* Story Section Styles */
+.story-section {
+  padding: 6rem 2rem;
+  position: relative; /* Ensure relative positioning for absolute child elements */
+}
+
+/* Story Content Box */
+.story-container {
+  background-color: rgba(153, 126, 91, 0.45);
+  padding: 2rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 1.5rem; /* Rounded corners */
+  margin-top: 2.5rem; /* Space between title and content */
+  position: relative;
+  left: 2%;
+}
+
+/* Story Title Styles */
+.story-title {
+  position: absolute;
+  left: 0; /* Align title to the left */
+  top: 15%; /* Move the title down vertically */
+  transform: translateY(-20%); /* Vertically center the title */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adds shadow effect to the title */
+  font-size: 4.5rem; /* Adjust font size as needed */
+  color: #3e2723; /* Dark brown color */
+  z-index: 10; /* Ensure the title stays on top of the container */
+}
+
+/* Story Content Styles */
+.story-content {
+  font-size: 1rem; /* Adjust font size */
+  color: #3e2723; /* Dark brown color */
+}
+
+.photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.gallery-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* Shadow effect */
+  margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  overflow: hidden;
+  width: 100%;
+  animation: rotateGallery 20s linear infinite; /* Adjusted animation time */
+}
+
+/* Duplicating the image items is key to a seamless loop */
+.gallery-container .art-item {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0; /* Prevents items from shrinking */
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.art-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+@keyframes rotateGallery {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate by 50% of the total container's width, which contains doubled images */
+    transform: translateX(calc(-50% - 0.75rem));  
+  }
+}
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  margin-bottom: 2rem;
+  letter-spacing: 0.1rem;
+}
+
+.contact-container {
+  background-color: rgba(153, 126, 91, 0.45); 
+  padding: 2.5rem;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 1.5rem;
+  margin-top: 2.5rem;
+  display: flex; 
+  flex-direction: column;
+  gap: 2rem; 
+}
+
+
+.contact-row {
+  display: flex;
+  justify-content: space-between; 
+  flex-wrap: wrap; 
+  gap: 1.5rem; 
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1; 
+  min-width: 150px; 
+}
+
+.contact-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #462c27;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info {
+  font-size: 1.1rem;
+  color: #503d39;
+  word-wrap: break-word;
+}
+
+.contact-info:hover {
+  text-decoration: underline;
+}
+
+.address-wrapper {
+  background-color: rgba(177, 148, 110, 0.65); 
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  border: 2px solid #3e2723; 
+}
+
+.address-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #503d39;
+  margin-bottom: 0.75rem;
+}
+
+.address-info {
+  font-size: 1.1rem;
+  color: #503d39;
+  line-height: 1.5;
+}
