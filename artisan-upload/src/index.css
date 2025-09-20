@@ -309,3 +309,20 @@ button:hover {
   color: #503d39;
   line-height: 1.5;
 }
+
+.submitted-popup {
+    background-color: #f5f5dc; 
+    border: 2px dashed #3e2723; 
+    border-radius: 10px;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitted-popup p {
+    font-size: 1.5rem;
+    color: #3e2723; 
+    font-weight: bold;
+}
