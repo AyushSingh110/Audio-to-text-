@@ -21,7 +21,7 @@ const LandingPage = ({ uploadedImages, artisanData }) => {
             .catch((err) => {
                 setAboutTxt("Could not load about text.");
                 setStoryTxt("Could not load story text.");
-                setKeywords("Could not load keywords");
+                setKeywords("Could not load keywords.");
             });
     }, []);
 
