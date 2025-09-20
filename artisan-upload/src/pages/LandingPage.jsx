@@ -67,32 +67,37 @@ const LandingPage = ({ uploadedImages, artisanData }) => {
             <PhotoSection
                 images={uploadedImages} />
             {/* Social Post Generator Section */}
-            <div className="social-post-generator p-6 bg-yellow-50 rounded-xl shadow-lg mt-8">
-                <h2 className="text-2xl font-bold mb-4">Generate Social Media Post</h2>
-                <textarea
-                    className="w-full p-2 border rounded mb-2"
-                    rows={3}
-                    placeholder="Enter your post content..."
-                    value={postText}
-                    onChange={e => setPostText(e.target.value)}
-                />
-                <div className="flex gap-4 mb-2">
-                    <select value={postType} onChange={e => setPostType(e.target.value)} className="p-2 border rounded">
-                        <option value="instagram">Instagram Post</option>
-                        <option value="twitter">Twitter Post</option>
-                        <option value="whatsapp">WhatsApp Message</option>
-                        <option value="email">Email Campaign</option>
-                    </select>
-                    <button onClick={handleGeneratePost} className="bg-blue-500 text-white px-4 py-2 rounded">Generate</button>
+            <div className="relative social-post-generator p-6 bg-[#D6C39A]  border-2 border-dashed border-[#3e2723] rounded-xl shadow-lg mt-8 mb-4">
+                <div className="absolute inset-0 z-0 bg-cover bg-center filter blur-sm opacity-50" 
+                    style={{ backgroundImage: "url('/bg-1.jpg')" }}>
                 </div>
-                {generatedPost && (
-                    <GeneratedPost 
-                        postText={generatedPost}
-                        image={uploadedImages[0]} // Use the first uploaded image
-                        postType={postType}
-                        onShare={handleShare}
+                <div className="relative z-10">
+                    <h2 className="text-2xl font-bold mb-4">Generate Social Media Post</h2>
+                    <textarea
+                        className="w-full p-2 border rounded mb-2 bg-yellow-50"
+                        rows={3}
+                        placeholder="Enter your post content..."
+                        value={postText}
+                        onChange={e => setPostText(e.target.value)}
                     />
-                )}
+                    <div className="flex gap-4 mb-2">
+                        <select value={postType} onChange={e => setPostType(e.target.value)} className="p-2 border rounded bg-yellow-50">
+                            <option value="instagram">Instagram Post</option>
+                            <option value="twitter">Twitter Post</option>
+                            <option value="whatsapp">WhatsApp Message</option>
+                            <option value="email">Email Campaign</option>
+                        </select>
+                        <button onClick={handleGeneratePost} className="bg-[#B88A4A] text-dark-brown px-4 py-2 rounded text-lg">Generate</button>
+                    </div>
+                    {generatedPost && (
+                        <GeneratedPost 
+                            postText={generatedPost}
+                            image={uploadedImages[0]} 
+                            postType={postType}
+                            onShare={handleShare}
+                        />
+                    )}
+                </div>
             </div>
             <ContactSection
                 artisanName={artisanData?.artisanName}

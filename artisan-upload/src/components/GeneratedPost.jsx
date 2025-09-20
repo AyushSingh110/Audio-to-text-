@@ -10,7 +10,7 @@ const GeneratedPost = ({ postText, image, onShare }) => {
         return (
           <button 
             key={index} 
-            className="bg-blue-500 text-white px-4 py-2 rounded-full my-2 hover:bg-blue-600 transition-colors"
+            className="generate-post bg-white text-white px-4 py-2 rounded-full my-2 hover:bg-[#3e2723] transition-colors"
             onClick={() => alert(`Button clicked: ${buttonText}`)} 
           >
             {buttonText}
@@ -22,7 +22,7 @@ const GeneratedPost = ({ postText, image, onShare }) => {
   };
 
   return (
-    <div className="generated-post-card bg-white p-4 rounded-lg shadow-lg mt-4 max-w-lg mx-auto">
+    <div className="generated-post-card bg-[#D6C39A] p-4 rounded-lg shadow-lg mt-4 max-w-lg mx-auto">
       {/* Post Image */}
       {image && (
         <img src={image} alt="Post visual" className="w-full h-64 object-cover rounded-t-lg" />
@@ -30,7 +30,7 @@ const GeneratedPost = ({ postText, image, onShare }) => {
 
       {/* Post Content */}
       <div className="p-4">
-        <div className="text-gray-800" style={{ whiteSpace: 'pre-wrap' }}>
+        <div className="text-dark-brown" style={{ whiteSpace: 'pre-wrap' }}>
           {renderPostWithButtons(postText)}
         </div>
       </div>
@@ -39,13 +39,13 @@ const GeneratedPost = ({ postText, image, onShare }) => {
       <div className="flex justify-end gap-3 p-4 border-t border-gray-200">
         <button 
           onClick={() => onShare('instagram')} 
-          className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 transition-colors"
+          className="bg-[#D17076] text-white px-4 py-2 rounded-full hover:bg-[#D17076] transition-colors"
         >
           Share on Instagram
         </button>
         <button 
           onClick={() => onShare('twitter')} 
-          className="bg-blue-400 text-white px-4 py-2 rounded-full hover:bg-blue-500 transition-colors"
+          className="bg-[#1DA1F2] text-white px-4 py-2 rounded-full hover:bg-[#1DA1F2] transition-colors"
         >
           Share on Twitter
         </button>
