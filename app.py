@@ -17,7 +17,7 @@ print("Initializing Flask app and loading AI models...")
 app = Flask(__name__)
 
 # --- Configuration for file storage ---
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'artisan-upload/uploads'
 AUDIO_FOLDER = os.path.join(UPLOAD_FOLDER, 'audio')
 DATA_FOLDER = os.path.join(UPLOAD_FOLDER, 'data')
 os.makedirs(AUDIO_FOLDER, exist_ok=True)
@@ -91,8 +91,8 @@ def generate_structured_content(transcript):
 
     # --- Task 4: Generate Marketplace Keywords (with generation controls) ---
     keywords_prompt = f"""
-    Based on the following text, generate a list of 7 to 10 commercially relevant keywords for a marketplace listing.
-    The keywords should include the product type, material, style, potential uses, and origin. Separate them with commas.
+    Based on the following text, generate a list of 7 to 10 commercially relevant trendy keywords for a marketplace listing.
+    The keywords should include the product type, material, style, potential uses, and origin. Separate them with commas. The keywords should be represented in structured way seperated by a "|" in the json file.
 
     Text: \"{transcript + ' ' + description}\"
     """

@@ -1,41 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroSection from "../components/HeroSection";
 import AboutSection from "../components/AboutSection";
 import StorySection from "../components/StorySection";
 import PhotoSection from "../components/PhotosSection";
 import ContactSection from "../components/ContactSection";  
 
-const LandingPage = ({uploadedImages,artisanData}) => {
-    const Data = {
-        artisanName: "kriti Creations",
-        tagline: "HANDMADE | ECO-FRIENDLY | HERITAGE",
-        ctaText: "Explore art pieces",
-        aboutTxt: "This is where we describe the artisan's journey, craftsmanship, and unique values.The artisan creates beautiful, handmade products that capture heritage and culture.The story behind each item is deeply rooted in tradition, making each creation unique.",
-        storyTxt: "In a quiet village surrounded by bamboo groves, Aarav, a skilled artisan, learned the ancient craft of bamboo weaving from his father. With each piece he creates—whether it's a basket, mat, or chair—Aarav honors the tradition passed down through generations. His woven creations are a blend of nature's beauty and human craftsmanship. Determined to preserve this art, he now teaches the younger generation, ensuring that the timeless tradition of bamboo weaving continues to thrive.",
-        images: [
-            "https://via.placeholder.com/200",
-            "https://via.placeholder.com/200",
-            "https://via.placeholder.com/200",
-        ],
-    };
+const LandingPage = ({ uploadedImages, artisanData }) => {
+    const [aboutTxt, setAboutTxt] = useState("");
+    const [storyTxt, setStoryTxt] = useState("");
+    const [keywords, setKeywords] = useState("");
+
+    useEffect(() => {
+        fetch("/uploads/data/3fdc4688-2ecd-4b9d-837b-633695ae3132.json")
+            .then((res) => res.json())
+            .then((data) => {
+                setAboutTxt(data.content.about_text);
+                setStoryTxt(data.transcript);
+                setKeywords(data.content.keywords);
+            })
+            .catch((err) => {
+                setAboutTxt("Could not load about text.");
+                setStoryTxt("Could not load story text.");
+                setKeywords("Could not load keywords");
+            });
+    }, []);
 
     return (
         <div className="main">
             <HeroSection 
-            artisanName={Data.artisanName}
-            tagline={Data.tagline}
-            ctaText={Data.ctaText}/>
+                artisanName={artisanData?.artisanName || "Artisan"}
+                tagline={keywords}
+                ctaText={"Explore art pieces"}
+            />
             <AboutSection 
-            aboutTxt={Data.aboutTxt} />
+                aboutTxt={aboutTxt} />
             <StorySection 
-            storyTxt={Data.storyTxt} />
+                storyTxt={storyTxt} />
             <PhotoSection
-            images={uploadedImages} />
+                images={uploadedImages} />
             <ContactSection
-            artisanName={artisanData.artisanName}
-            phoneNum={artisanData.phoneNum}
-            email={artisanData.email}
-            shopAddress={artisanData.shopAddress} />
+                artisanName={artisanData?.artisanName}
+                phoneNum={artisanData?.phoneNum}
+                email={artisanData?.email}
+                shopAddress={artisanData?.shopAddress} />
         </div>
     );
 };
