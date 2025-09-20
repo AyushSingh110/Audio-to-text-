@@ -38,7 +38,7 @@ def generate_post(text, post_type):
 	if post_type == "instagram":
 		prompt = (
 			f"Create an engaging, colorful Instagram post of 10 lines with relevant content only for the following artisan content: '{text}'. "
-			"Use emojis, a catchy hook, and add trendy hashtags. Make it visually appealing and audience-attracting."
+			"Use emojis, a catchy hook, and add trendy hashtags. Make it visually appealing and audience-attracting. Do not inlude instructions."
 		)
 	elif post_type == "twitter":
 		prompt = (
