@@ -1,22 +1,25 @@
-
+# --- Web Backend Framework ---
 Flask~=3.0.0
+Flask-Cors~=4.0.1
 
+# --- Core AI & NLP Libraries (Hugging Face & PyTorch) ---
+torch
 transformers~=4.41.0
 sentencepiece~=0.2.0
 huggingface-hub~=0.23.0
+keybert~=0.8.0
 
-numpy~=1.26.0
-
-scipy~=1.13.0
-
-soundfile~=0.12.0
-
-noisereduce~=3.0.0
-
-# -- OpenAI Whisper for Transcription --
+# --- Audio Processing & Transcription ---
 # Installs the latest version of Whisper directly from the official repository
 git+https://github.com/openai/whisper.git
 # Python wrapper for the ffmpeg tool, which Whisper requires
 ffmpeg-python~=0.2.0
+soundfile~=0.12.0
+noisereduce~=3.0.0
+numpy~=1.26.0
+scipy~=1.13.0
 
-keybert
+# --- Gemini API & Utilities ---
+requests~=2.32.0
+python-dotenv~=1.0.1
+gunicorn~=22.0.0
