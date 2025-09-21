@@ -13,7 +13,7 @@ keybert~=0.8.0
 # Installs the latest version of Whisper directly from the official repository
 git+https://github.com/openai/whisper.git
 # Python wrapper for the ffmpeg tool, which Whisper requires
-ffmpeg-python~=0.2.0
+
 soundfile~=0.12.0
 noisereduce~=3.0.0
 numpy~=1.26.0
