@@ -1,5 +1,3 @@
-# Social Post Ge    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key={GEMINI_API_KEY}"erator using Gemini API
-
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
@@ -52,8 +50,8 @@ def generate_post(text, post_type):
 		)
 	elif post_type == "email":
 		prompt = (
-			f"Write an email campaign for this artisan content:do not include instructions '{text}'. "
-			"Include a catchy subject line, engaging body, and a call to action. Make it suitable for a newsletter."
+			f"Write an email campaign for this artisan content:'{text}'. "
+			"Include a catchy subject line, stick to relevant content, engaging body, and a call to action. Make it suitable for a newsletter. do not include instructions."
 		)
 	else:
 		prompt = f"Generate a social media post for this content: '{text}'. do not include instructions. Add trendy hashtags."
